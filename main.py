@@ -3,6 +3,7 @@ import tkinter.ttk as ttk
 from tkinter import filedialog
 import urllib.request
 
+content_host = "http://attorneyoffline.de/base/"
 baseFolder = "."
 
 def selectFolder():
@@ -13,7 +14,7 @@ def selectFolder():
 def downloadChar():
     global baseFolder
     try:
-        urllib.request.urlretrieve("http://s3.wasabisys.com/webao/base/characters/" + char_name.get().lower() + "/char.ini", baseFolder + "/characters/" + char_name.get().lower() + "/char.ini")
+        urllib.request.urlretrieve(content_host + "characters/" + char_name.get().lower() + "/char.ini", baseFolder + "/characters/" + char_name.get().lower() + "/char.ini")
     except ValueError:
         pass
 
